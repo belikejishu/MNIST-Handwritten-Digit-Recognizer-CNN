@@ -1,6 +1,6 @@
 # MNIST Handwritten Digit Recognizer using Deep CNN
 
-## About the Experiment
+## About the Project
 
 This project implements a Deep Convolutional Neural Network (CNN) using TensorFlow and Keras to recognize handwritten digits from the MNIST dataset.
 
