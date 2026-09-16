@@ -1,90 +1,60 @@
 # MNIST Handwritten Digit Recognizer using Deep CNN
 
-## About the Project
+This project implements a Deep Convolutional Neural Network (CNN) to recognize handwritten digits. Built using TensorFlow and Keras, the model analyzes grayscale images from the MNIST dataset and classifies them into one of the 10 digits, from 0 to 9.
 
-This project implements a Deep Convolutional Neural Network (CNN) using TensorFlow and Keras to recognize handwritten digits from the MNIST dataset.
+## 🚀 Tech Stack & Libraries
 
-The model learns patterns from handwritten images and classifies them into one of the 10 digits from 0 to 9.
+- **Deep Learning Framework:** TensorFlow, Keras
+- **Data Manipulation & Analysis:** NumPy
+- **Data Visualization:** Matplotlib
+- **Dataset:** MNIST
+- **Development Environment:** Google Colab / Jupyter Notebook
 
-## Objective
+## 📊 Dataset Information
 
-To design, implement, train, and evaluate a Deep Convolutional Neural Network for handwritten digit recognition using the MNIST dataset.
+- **Dataset:** MNIST Handwritten Digits Dataset
+- **Training Images:** 60,000
+- **Testing Images:** 10,000
+- **Image Size:** 28 × 28 pixels
+- **Image Type:** Grayscale
+- **Number of Classes:** 10 (0–9)
 
-The experiment also demonstrates the use of:
+## ⚙️ Data Preprocessing
 
-- Convolutional layers
-- ReLU activation function
-- Max Pooling
-- Flattening
-- Dense layers
-- Softmax activation
-- Adam optimizer
-- Loss function
-- Model training and evaluation
+1. **Reshaping:** Reshaped the images into `28 × 28 × 1` format to provide the grayscale channel required by the CNN.
+2. **Normalization:** Divided pixel values by `255` to convert them from the range `0–255` to `0–1`.
+3. **Dataset Loading:** Loaded the MNIST dataset directly using TensorFlow/Keras.
 
-## Dataset
+## 🧠 Model Architecture
 
-The MNIST dataset contains handwritten images of digits from 0 to 9.
+The Deep Convolutional Neural Network is built using a sequential stack:
 
-- Training images: 60,000
-- Testing images: 10,000
-- Image size: 28 × 28 pixels
-- Image type: Grayscale
-- Number of classes: 10 (0–9)
+- **Convolutional Layer 1:** 32 filters of size `3 × 3` with `ReLU` activation
+- **Max Pooling Layer 1:** `2 × 2` pooling
+- **Convolutional Layer 2:** 64 filters of size `3 × 3` with `ReLU` activation
+- **Max Pooling Layer 2:** `2 × 2` pooling
+- **Flatten Layer:** Converts feature maps into a one-dimensional array
+- **Dense Layer:** 64 neurons with `ReLU` activation
+- **Output Layer:** 10 neurons with `Softmax` activation
 
-The dataset is loaded directly using TensorFlow/Keras.
+## 🏃‍♂️ Training Details
 
-## Technologies Used
+- **Optimizer:** Adam
+- **Loss Function:** Sparse Categorical Crossentropy
+- **Metrics:** Accuracy
+- **Epochs:** 10
+- **Batch Size:** 64
+- **Validation Split:** 10%
 
-- Python
-- TensorFlow
-- Keras
-- NumPy
-- Matplotlib
-- MNIST Dataset
-- Google Colab / Jupyter Notebook
+## 📈 Evaluation & Results
 
-## CNN Architecture
+- **Test Evaluation:** The trained model is evaluated using the MNIST test dataset.
+- **Accuracy Visualization:** Training and validation accuracy are plotted across all epochs.
+- **Loss Visualization:** Training and validation loss are plotted to observe model performance.
+- **Prediction Visualization:** The predicted and actual labels of the first 10 test images are displayed.
 
-The CNN used in this experiment consists of the following layers:
-
-1. Conv2D - 32 filters of size 3 × 3 with ReLU activation
-2. MaxPooling2D - 2 × 2 pooling
-3. Conv2D - 64 filters of size 3 × 3 with ReLU activation
-4. MaxPooling2D - 2 × 2 pooling
-5. Flatten layer
-6. Dense layer - 64 neurons with ReLU activation
-7. Dense output layer - 10 neurons with Softmax activation
-
-### Model Flow
-
-Input Image (28 × 28 × 1)
-        ↓
-Conv2D (32 filters)
-        ↓
-MaxPooling
-        ↓
-Conv2D (64 filters)
-        ↓
-MaxPooling
-        ↓
-Flatten
-        ↓
-Dense (64 neurons)
-        ↓
-Dense (10 neurons)
-        ↓
-Predicted Digit (0–9)
-
-## Data Preprocessing
-
-The MNIST images are originally represented using pixel values from 0 to 255.
-
-The images are reshaped into:
-
-```text
-28 × 28 × 1
+The model achieved approximately **99.07% accuracy** on the unseen testing data.
 
 ## 👤 Author
 
-**Jishan Attar**  
+**Jishan Attar**
