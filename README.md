@@ -1,10 +1,5 @@
 # MNIST Handwritten Digit Recognizer using Deep CNN
 
-## Experiment 15
-
-**Name:** Arshan Attar  
-**Roll Number:** 231408
-
 ## About the Experiment
 
 This project implements a Deep Convolutional Neural Network (CNN) using TensorFlow and Keras to recognize handwritten digits from the MNIST dataset.
